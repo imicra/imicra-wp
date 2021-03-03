@@ -35,6 +35,6 @@
 * Файл `bootstrap-walker-nav-menu.php` для стандартного меню из bootstrap.
 * Файл `custom-walker-nav-menu.php` для создания нового Walker_Nav_Menu.
 * Файл `theme-functions.php` с кастомными функциями.
-* Пвпка `cpt` для Custom Post Types.
-* Пвпка `admin` для расширения функционала админки. Изначально создает раздел меню для настроек темы.
+* Папка `cpt` для Custom Post Types.
+* Папка `admin` для расширения функционала админки. Изначально создает раздел меню для настроек темы.
 * Файл `woocommerce.php` с начальными настройками для подключения в тему Woocommerce.
