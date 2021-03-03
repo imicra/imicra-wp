@@ -1,7 +1,6 @@
 # Моя стартовая тема основанная на _s (A Starter Theme for WordPress)
-===
 
-See
+См.
 - [github](https://github.com/automattic/_s)
 - [_s](https://underscores.me/)
 
