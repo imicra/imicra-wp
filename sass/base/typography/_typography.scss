@@ -1,0 +1,27 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	font-size: 1rem;
+	line-height: $font__line-height-body;
+}
+
+// redefine bootstrap text colors
+.text-primary {
+	color: $color__text-heading!important;
+}
+
+.text-secondary {
+	color: $color__text-main!important;
+}
+
+.color-interactive {
+	color: $color__interactive;
+}
+
+@import "headings";
+@import "copy";

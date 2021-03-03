@@ -1,0 +1,118 @@
+.wpcf7 {
+  position: relative;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    padding: 1.5em 1em;
+  }
+
+  .ajax-loader {
+    display: none !important;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    &.form-check {
+      margin-bottom: 0;
+    }
+  }
+
+  span.wpcf7-list-item {
+    font-size: .9rem;
+    margin: 0;
+    width: 100%;
+  }
+
+  .wpcf7-not-valid-tip {
+    font-size: .8em;
+    color: $red;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  form {
+    margin-bottom: 2rem;
+    position: relative;
+
+    .wpcf7-response-output {
+      font-size: .9em;
+      color: $color__text-heading;
+      text-align: center;
+      margin: 0 !important;
+      border: none !important;
+      padding: 0;
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
+}
+
+// horizontal form
+.wpcf7 {
+  // container added in plugin's form template
+  .horizontal-form {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    .form-group {
+
+      @include media-breakpoint-up(md) {
+        margin-right: 1rem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    input {
+      border: 1px solid $color__interactive;
+    }
+
+    input:not([type=submit]) {
+      background: transparent;
+    }
+
+    input[type=submit] {
+      font-family: $font__heading;
+      font-weight: $font__bold;
+      height: 50px;
+      width: 100%;
+      text-transform: uppercase;
+      padding: 1rem 3rem;
+      border-bottom: 1px solid $color__interactive;
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+  }
+
+  .horizontal-form + .wpcf7-response-output {
+    color: $color__interactive;
+    bottom: 0;
+  }
+}
+
+// for forms in modals
+.modal-window {
+  .wpcf7 {
+    input[type="submit"] {
+      width: 100%;
+    }
+  
+    .wpcf7-response-output {
+      display: none !important;
+    }
+  }
+}
