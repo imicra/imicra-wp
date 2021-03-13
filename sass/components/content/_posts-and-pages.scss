@@ -15,6 +15,18 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	li {
+		color: $color__text-main;
+		position: relative;
+		margin-bottom: .5rem;
+
+		i {
+			position: absolute;
+			left: -2rem;
+			top: 3px;
+		}
+	}
 }
 
 .page-links {

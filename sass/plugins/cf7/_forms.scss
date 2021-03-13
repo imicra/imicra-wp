@@ -21,13 +21,14 @@
   }
 
   span.wpcf7-list-item {
-    font-size: .9rem;
+    font-size: .8rem;
     margin: 0;
     width: 100%;
   }
 
   .wpcf7-not-valid-tip {
     font-size: .8em;
+    line-height: 1;
     color: $red;
     position: absolute;
     white-space: nowrap;
