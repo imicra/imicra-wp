@@ -37,7 +37,7 @@ get_template_part( 'template-parts/header/header', 'page' );
 
 						endwhile; // End of the loop.
 
-						the_posts_navigation();
+						the_posts_pagination();
 
 					else :
 
