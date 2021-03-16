@@ -52,6 +52,25 @@ function imicra_customize_register( $wp_customize ) {
 		'title'	      => __( 'Хэдер', 'imicra' ),
 		'priority'    => 20,
 	) );
+
+	// sample repeater
+	$wp_customize->add_setting( 'imicra_sample_repeater', array(
+		'sanitize_callback' => 'imicra_sanitize_repeater',
+	) );
+
+	$wp_customize->add_control( new Imicra_General_Repeater( $wp_customize, 'imicra_sample_repeater', array(
+		'label'    => esc_html__( 'Добавить элемент', 'imicra' ),
+		'section'  => 'imicra_header_section',
+		'priority' => 20,
+		// 'imicra_image_control'     => true,
+		// 'imicra_icon_control'      => true,
+		// 'imicra_title_control'     => true,
+		// 'imicra_subtitle_control'  => true,
+		// 'imicra_text_control'      => true,
+		// 'imicra_link_control'      => true,
+		// 'imicra_page_control'      => true,
+		// 'imicra_shortcode_control' => true
+	) ) );
 }
 add_action( 'customize_register', 'imicra_customize_register' );
 
