@@ -108,13 +108,61 @@
 
 // for forms in modals
 .modal-window {
+  background-color: $color__interactive;
+  padding: 14px;
+
+  .fancybox-close-small {
+    right: 10px;
+    top: 10px;
+  }
+
+  .modal-window-inner {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 24px;
+    max-width: 450px;
+  }
+
   .wpcf7 {
-    input[type="submit"] {
+    
+    form {
+      padding: 0 3rem;
+    }
+
+    input:not([type=submit]),
+    textarea {
+      font-size: 1em;
+      border-color: $color__interactive;
+      padding: 1em;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.2em;
+      }
+
+      &:focus {
+        box-shadow: 0 6px 18px 2px rgba(0, 0, 0, .15);
+      }
+    }
+
+    .form-group.form-check {
+      margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+      margin-top: 0;
+    }
+
+    input[type=submit] {
+      font-size: 1.2em;
+      border-radius: 5px;
+      padding: .8em;
       width: 100%;
     }
   
     .wpcf7-response-output {
-      display: none !important;
+      color: #dc3545;
+      font-size: 14px;
+      bottom: -2.5rem;
     }
   }
 }
