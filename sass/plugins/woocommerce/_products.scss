@@ -1,4 +1,7 @@
 ul.products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 0;
 	padding: 0;
 
@@ -6,6 +9,7 @@ ul.products {
 		list-style: none;
 		position: relative;
 		margin-bottom: 2em;
+		width: 100%;
 
 		img {
 			display: block;
@@ -17,18 +21,25 @@ ul.products {
 	}
 }
 
+@media screen and (min-width: 576px) {
+	ul.products {
+		li.product {
+			width: 48%;
+		}
+	}
+}
+
 @media screen and (min-width: 48em) {
 
 	ul.products {
+		justify-content: flex-start;
 
 		li.product {
 
 			@include column-width(3);
-			float: left;
 			margin-right: $columns__margin;
 
 			&.first {
-				clear: both;
 			}
 
 			&.last {
@@ -40,7 +51,6 @@ ul.products {
 	ul.products.columns-1 {
 
 		li.product {
-			float: none;
 			width: 100%;
 		}
 
