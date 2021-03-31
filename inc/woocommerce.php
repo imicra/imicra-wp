@@ -103,6 +103,42 @@ function imicra_woocommerce_related_products_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'imicra_woocommerce_related_products_args' );
 
 /**
+ * Localization weight units.
+ */
+function imicra_localize_weight_units( $weight ) {
+	if ( strpos( $weight, ' g' ) ) {
+		$weight = str_replace( 'g', 'г', $weight );
+	}
+
+	if ( strpos( $weight, 'kg' ) ) {
+		$weight = str_replace( 'kg', 'кг', $weight );
+	}
+
+	return $weight;
+}
+add_filter( 'woocommerce_format_weight', 'imicra_localize_weight_units' );
+
+/**
+ * Localization dimensions units.
+ */
+function imicra_localize_dimensions_units( $dimensions ) {
+	if ( strpos( $dimensions, 'mm' ) ) {
+		$dimensions = str_replace( 'mm', 'мм', $dimensions );
+	}
+
+	if ( strpos( $dimensions, 'cm' ) ) {
+		$dimensions = str_replace( 'cm', 'см', $dimensions );
+	}
+
+	if ( strpos( $dimensions, ' m' ) ) {
+		$dimensions = str_replace( ' m', ' м', $dimensions );
+	}
+
+	return $dimensions;
+}
+add_filter( 'woocommerce_format_dimensions', 'imicra_localize_dimensions_units' );
+
+/**
  * Remove default WooCommerce wrapper.
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
