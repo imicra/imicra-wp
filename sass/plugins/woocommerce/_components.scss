@@ -249,6 +249,10 @@ p.stars {
 			margin: 0;
 			position: relative;
 
+			@media screen and (min-width: 48em) {
+				display: inline-block;
+			}
+
 			a {
 				padding: 1em 0;
 				display: block;
@@ -260,6 +264,88 @@ p.stars {
 
 		h2:first-of-type {
 			margin-bottom: 1em;
+		}
+	}
+}
+
+/**
+ * Reviews
+ */
+ .woocommerce-Reviews {
+
+	.woocommerce-noreviews,
+	.comment-notes {
+		display: inline-block;
+		font-size: 14px;
+	}
+
+	.woocommerce-noreviews {
+		padding: .3em 1em;
+	}
+
+	.comment-reply-title {
+		font-size: 1rem;
+		font-weight: $font__bold;
+		color: $color__text-main;
+		text-transform: uppercase;
+	}
+
+	.comment-form {
+
+		label {
+			display: block;
+			font-size: 14px;
+		}
+
+		.comment-form-cookies-consent {
+			label {
+				display: inline;
+			}
+		}
+
+		.comment-form-rating {
+			margin-top: 1.5em;
+		}
+
+		.comment-notes + .comment-form-rating {
+			margin-top: 0;
+		}
+
+		.comment-form-comment {
+			textarea {
+				width: 100%;
+
+				@media screen and (min-width: 768px) {
+					width: 50%;
+				}
+			}
+		}
+
+		.comment-form-author,
+		.comment-form-email {
+			input {
+				width: 100%;
+
+				@media screen and (min-width: 768px) {
+					width: 50%;
+				}
+			}
+		}
+
+		.comment-form-comment,
+		.comment-form-author,
+		.comment-form-email {
+			margin-bottom: .3rem;
+		}
+
+		.form-submit {
+			margin-top: 1.5em;
+		}
+
+		input[type="submit"] {
+			color: #fff;
+			background-color: $color__interactive;
+			padding: .7rem 1.5rem;
 		}
 	}
 }
