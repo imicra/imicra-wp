@@ -454,7 +454,88 @@ p.stars {
 /**
  * Forms
  */
- .woocommerce form {
+ .woocommerce form {.woocommerce form {
+
+	.form-row {
+		padding: 3px;
+    margin: 0 0 14px;
+
+		&.form-row-first,
+		&.form-row-last {
+			width: 100%;
+
+			@media screen and (min-width: 576px) {
+				width: 50%;
+			}
+		}
+
+		&.form-row-first {
+			@media screen and (min-width: 576px) {
+				float: left;
+			}
+		}
+
+		&.form-row-last {
+			@media screen and (min-width: 576px) {
+				float: right;
+			}
+		}
+
+		&.form-row-wide {
+			width: 100%;
+		}
+
+		input.input-text {
+			width: 100%;
+		}
+
+		label {
+			width: 100%;
+
+			abbr {
+				border-bottom: none;
+				text-decoration: none;
+				cursor: default;
+			}
+		}
+	
+		.woocommerce-input-wrapper {
+			position: relative;
+			width: 100%;
+
+			input {
+				width: 100%;
+			}
+		}
+
+		span.error {
+			display: block;
+			position: absolute;
+			font-size: 12px;
+			color: $woocommerce__color-error;
+			bottom: 0;
+			transform: translateY(100%);
+		}
+	
+		&.woocommerce-invalid-required-field span.error {
+			opacity: 1!important;
+		}
+	
+		// &.woocommerce-validated {
+	
+		// 	input.input-text {
+		// 		box-shadow: inset 2px 0 0 $woocommerce__color-success;
+		// 	}
+		// }
+	
+		// &.woocommerce-invalid {
+	
+		// 	input.input-text {
+		// 		box-shadow: inset 2px 0 0 $woocommerce__color-error;
+		// 	}
+		// }
+	}
+}
 
 	.form-row {
 		padding: 3px;

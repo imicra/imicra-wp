@@ -180,13 +180,26 @@ add_action( 'woocommerce_after_main_content', 'imicra_woocommerce_wrapper_after'
  * Customize Checkout's fiels.
  */
 function imicra_override_checkout_fields( $fields ) {
-	unset( $fields['billing']['billing_country'] );
-	unset( $fields['billing']['billing_state'] );
 	unset( $fields['order']['order_comments'] );
 
 	return $fields;
 }
 add_action( 'woocommerce_checkout_fields', 'imicra_override_checkout_fields' );
+
+/**
+ * Customize default address fiels.
+ */
+function imicra_disable_address_fields_validation( $fields ) {
+	$fields['address_1']['required'] = false;
+	$fields['city']['required'] = false;
+
+	unset( $fields['country'] );
+	unset( $fields['state'] );
+	unset( $fields['postcode'] );
+
+	return $fields;
+}
+add_filter( 'woocommerce_default_address_fields' , 'imicra_disable_address_fields_validation' );
 
 /**
  * Remove "(optional)" from non required fields.
