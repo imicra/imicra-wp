@@ -177,6 +177,60 @@ if ( ! function_exists( 'imicra_woocommerce_wrapper_after' ) ) {
 add_action( 'woocommerce_after_main_content', 'imicra_woocommerce_wrapper_after' );
 
 /**
+ * Customize Checkout's fiels.
+ */
+function imicra_override_checkout_fields( $fields ) {
+	unset( $fields['billing']['billing_country'] );
+	unset( $fields['billing']['billing_state'] );
+	unset( $fields['order']['order_comments'] );
+
+	return $fields;
+}
+add_action( 'woocommerce_checkout_fields', 'imicra_override_checkout_fields' );
+
+/**
+ * Remove "(optional)" from non required fields.
+ */
+function remove_checkout_optional_fields_label( $field, $key, $args, $value ) {
+	// Only on checkout page
+	if( is_checkout() && ! is_wc_endpoint_url() ) {
+			$optional = '&nbsp;<span class="optional">(' . esc_html__( 'optional', 'woocommerce' ) . ')</span>';
+			$field = str_replace( $optional, '', $field );
+	}
+	
+	return $field;
+}
+add_filter( 'woocommerce_form_field' , 'remove_checkout_optional_fields_label', 10, 4 );
+
+/**
+ * Remove Additional information title on checkout
+ */
+add_action( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
+
+/**
+ * Chckout pages terms checkbox by default is checked.
+ */
+function imicra_terms_is_checked_default() {
+	return 1;
+}
+add_filter( 'woocommerce_terms_is_checked_default', 'imicra_terms_is_checked_default' );
+
+/**
+ * Add Inline Field Error Notifications at Checkout
+ */ 
+function imicra_checkout_fields_in_label_error( $field, $key, $args, $value ) {
+	if ( strpos( $field, '</span>' ) !== false && $args['required'] ) {
+		 $error = '<span class="error" style="visibility: hidden;">';
+		 $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] );
+		 $error .= '</span>';
+		 $field = substr_replace( $field, $error, strpos( $field, '</span>' ), 0);
+	}
+	
+	return $field;
+}
+add_filter( 'woocommerce_form_field', 'imicra_checkout_fields_in_label_error', 10, 4 );
+
+/**
  * Sample implementation of the WooCommerce Mini Cart.
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...

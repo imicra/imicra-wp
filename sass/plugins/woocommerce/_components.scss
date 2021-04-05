@@ -506,20 +506,29 @@ p.stars {
 				width: 100%;
 			}
 		}
-	
-		&.woocommerce-validated {
-	
-			input.input-text {
-				box-shadow: inset 2px 0 0 $woocommerce__color-success;
-			}
+
+		span.error {
+			font-size: 12px;
+			color: $woocommerce__color-error;
 		}
 	
-		&.woocommerce-invalid {
-	
-			input.input-text {
-				box-shadow: inset 2px 0 0 $woocommerce__color-error;
-			}
+		&.woocommerce-invalid-required-field span.error {
+			visibility: visible!important;
 		}
+	
+		// &.woocommerce-validated {
+	
+		// 	input.input-text {
+		// 		box-shadow: inset 2px 0 0 $woocommerce__color-success;
+		// 	}
+		// }
+	
+		// &.woocommerce-invalid {
+	
+		// 	input.input-text {
+		// 		box-shadow: inset 2px 0 0 $woocommerce__color-error;
+		// 	}
+		// }
 	}
 }
 
