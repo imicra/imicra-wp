@@ -1,21 +1,77 @@
-@media screen and (min-width: 768px) {
+form.checkout_coupon {
+	border: 1px solid #d3ced2;
+	padding: 20px;
+	margin: 2em 0;
+	text-align: left;
+	border-radius: 5px;
+	@include clearfix;
+}
 
-	.col2-set {
+.woocommerce-checkout {
+	#payment {
+		background: #ebe9eb;
+    border-radius: 5px;
 
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
+		ul.payment_methods {
+			text-align: left;
+			padding: 1em;
+			border-bottom: 1px solid #d3ced2;
+			margin: 0;
+			list-style: none outside;
+
+			li {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0;
+
+				input {
+					margin: 0 1em 0 0;
+				}
+
+				label {
+					flex: 1 0 auto;
+					cursor: pointer;
+				}
+			}
 		}
 
-		.form-row-last {
-			float: right;
-			margin-right: 0;
+		div.payment_box {
+			position: relative;
+			width: 100%;
+			padding: 1em;
+			margin: 1em 0;
+			font-size: .92em;
+			border-radius: 2px;
+			line-height: 1.5;
+			background-color: #dfdcde;
+			color: #515151;
+
+			&:before {
+				content: "";
+				display: block;
+				border: 1em solid #dfdcde;
+				border-right-color: transparent;
+				border-left-color: transparent;
+				border-top-color: transparent;
+				position: absolute;
+				top: -.75em;
+				left: 0;
+				margin: -1em 0 0 2em;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
 		}
 
-		.form-row-first,
-		.form-row-last {
+		div.form-row {
+			padding: 1em;
+		}
 
-			@include column-width(2);
+		#place_order {
+			font-size: 1.25em;
+			padding: 1em;
+			width: 100%;
 		}
 	}
 }

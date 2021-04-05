@@ -40,4 +40,17 @@
 	border-radius: $radius;
 }
 
+// Clearfix
+@mixin clearfix() {
+	&:before,
+	&:after {
+			content: "";
+			display: table;
+			table-layout: fixed;
+	}
+	&:after {
+			clear: both;
+	}
+}
+
 @import "fluid-typography";
