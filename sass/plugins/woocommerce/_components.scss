@@ -490,7 +490,7 @@ p.stars {
 /**
  * Forms
  */
- .woocommerce form {.woocommerce form {
+.woocommerce form {
 
 	.form-row {
 		padding: 3px;
@@ -571,84 +571,54 @@ p.stars {
 		// 	}
 		// }
 	}
-}
 
-	.form-row {
-		padding: 3px;
-    margin: 0 0 6px;
+	&.login,
+	&.register {
+		border: 1px solid #d3ced2;
+    padding: 20px;
+    margin: 2em 0;
+    text-align: left;
+    border-radius: 5px;
+	}
 
-		&.form-row-first,
-		&.form-row-last {
-			width: 100%;
+	.password-input {
+		display: flex;
+		flex-direction: column;
+		flex-direction: column;
+		flex-direction: column;
+		position: relative;
 
-			@media screen and (min-width: 576px) {
-				width: 50%;
-			}
+		input {
+			padding-right: 2.5rem;
+		}
+	}
+
+	.show-password-input {
+		position: absolute;
+    right: .7em;
+    top: .7em;
+    cursor: pointer;
+
+		&.display-password:after {
+			color: #585858;
 		}
 
-		&.form-row-first {
-			@media screen and (min-width: 576px) {
-				float: left;
-			}
+		&:after {
+			content: "";
+			font-family: WooCommerce;
+			font-weight: 400;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			margin-left: .618em;
+			text-decoration: none;
 		}
+	}
 
-		&.form-row-last {
-			@media screen and (min-width: 576px) {
-				float: right;
-			}
-		}
-
-		&.form-row-wide {
-			width: 100%;
-		}
-
-		input.input-text {
-			width: 100%;
-		}
-
-		label {
-			width: 100%;
-
-			abbr {
-				border-bottom: none;
-				text-decoration: none;
-				cursor: default;
-			}
-		}
-	
-		.woocommerce-input-wrapper {
-			width: 100%;
-
-			input {
-				width: 100%;
-			}
-		}
-
-		span.error {
-			font-size: 12px;
-			color: $woocommerce__color-error;
-		}
-	
-		&.woocommerce-invalid-required-field span.error {
-			visibility: visible!important;
-		}
-	
-		// &.woocommerce-validated {
-	
-		// 	input.input-text {
-		// 		box-shadow: inset 2px 0 0 $woocommerce__color-success;
-		// 	}
-		// }
-	
-		// &.woocommerce-invalid {
-	
-		// 	input.input-text {
-		// 		box-shadow: inset 2px 0 0 $woocommerce__color-error;
-		// 	}
-		// }
+	a {
+		color: $color__interactive;
 	}
 }
-
 
 /**
  * Buttons
