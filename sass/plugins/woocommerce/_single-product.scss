@@ -12,7 +12,22 @@
 				top: 2em;
 				right: 1em;
 				display: block;
-				z-index: 99;
+				height: 2em;
+				width: 2em;
+				text-align: center;
+				text-indent: -999px;
+				overflow: hidden;
+				z-index: 1;
+
+				&:before {
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: inherit;
+					text-rendering: auto;
+					display: block;
+					content: "\f00e";
+					line-height: 2;
+					text-indent: 0;
+				}
 			}
 
 			.flex-viewport {
