@@ -46,20 +46,3 @@ add_action( 'wp_head', 'imicra_pingback_header' );
 function imicra_is_frontpage() {
 	return ( is_front_page() && ! is_home() );
 }
-
-/**
- * Disables the default WordPress option of converting emoticons to image smilies
- */
-add_filter( 'option_use_smilies', '__return_false' );
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-remove_action('admin_print_scripts', 'print_emoji_detection_script');
-remove_action('admin_print_styles', 'print_emoji_styles');
-
-/**
- * Clean head.
- */
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-// meta rel='dns-prefetch' href='//s.w.org'
-// remove_action( 'wp_head', 'wp_resource_hints', 2 );

@@ -244,6 +244,14 @@ remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
 /**
+ * Clean head.
+ */
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'wlwmanifest_link');
+// meta rel='dns-prefetch' href='//s.w.org'
+// remove_action( 'wp_head', 'wp_resource_hints', 2 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
