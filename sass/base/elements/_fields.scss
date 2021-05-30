@@ -44,6 +44,57 @@ button[type=submit] {
 	}
 }
 
+// checkboxes
+input[type="checkbox"] {
+	display: none;
+
+	// like wpcf7
+	& + span {
+		position: relative;
+		padding-left: 2.5rem;
+		cursor: pointer;
+
+		&:before {
+			background-color: transparent;
+			border: 1px solid $color__interactive;
+			padding: 7px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0px;
+		}
+
+		&:after {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0px;
+		}
+	}
+
+	&:checked {
+
+		& + span {
+
+			&:before {
+				background-color: transparent;
+				border-color: $color__interactive;
+			}
+
+			&:after {
+				font-family: FontAwesome;
+				content: "\f00c";
+				color: #fff;
+				font-size: 1rem;
+				position: absolute;
+				left: 3px;
+				color: $color__interactive;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
 // bootstrap
 .form-control:focus {
 	border-color: $color__interactive;
