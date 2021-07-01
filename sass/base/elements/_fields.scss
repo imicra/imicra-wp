@@ -36,6 +36,7 @@ textarea {
 
 input[type=submit],
 button[type=submit] {
+	cursor: pointer;
 
 	&:disabled,
 	&[disabled],
